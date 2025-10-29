@@ -1,6 +1,7 @@
 package session6.E_Set;
 
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -13,7 +14,7 @@ import java.util.TreeSet;
  */
 public class B_DemoCard {
     public static void main(String[] args) {
-        Set<Card> cards = new TreeSet<>();
+        Set<Card> cards = new HashSet<>();
 
         cards.add(new Card("Ace of Hearts"));
         cards.add(new Card("Ace of Hearts"));

@@ -1,5 +1,7 @@
 package session6.E_Set;
 
+import java.util.Objects;
+
 class Card {
     String name;
 
@@ -7,5 +9,16 @@ class Card {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return Objects.equals(name, card.name);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
 }
