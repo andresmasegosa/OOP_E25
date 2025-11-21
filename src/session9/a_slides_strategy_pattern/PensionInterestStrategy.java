@@ -1,0 +1,8 @@
+package session9.a_slides_strategy_pattern;
+
+public class PensionInterestStrategy implements InterestStrategy{
+    @Override
+    public double getInterest(double balance) {
+        return balance*0.1;
+    }
+}
