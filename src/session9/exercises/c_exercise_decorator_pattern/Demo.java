@@ -3,11 +3,19 @@ package session9.exercises.c_exercise_decorator_pattern;
 
 public class Demo {
     public static void main(String[] args) {
-        SendDataService sendDataService = new SendDataService("http://128.1.1.1");
+        SendDataService basicService = new SendDataServiceBasic("http://128.1.1.1");
 
-        sendDataService.sendData("Hello");
+        SendDataService encryptedService = new EncryptorDecorator(basicService);
+        SendDataService compressedAndEncryptedService = new CompressorDecorator(encryptedService);
+
+        basicService.sendData("Hello");
         System.out.println();
 
+        encryptedService.sendData("Hello");
+        System.out.println();
+
+        compressedAndEncryptedService.sendData("Hello");
+        
         /***** UNCOMMENT BELOW TO PROVIDE FEEDBACK ****/
         /*
         //Did you have time to finish the exercise?

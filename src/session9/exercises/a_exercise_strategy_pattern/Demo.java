@@ -1,6 +1,7 @@
 package session9.exercises.a_exercise_strategy_pattern;
 
 import session9.exercises.a_exercise_strategy_pattern.payments_apis.MasterCard;
+import session9.exercises.a_exercise_strategy_pattern.payments_apis.PayPal;
 
 public class Demo {
     public static void main(String[] args) {
@@ -13,7 +14,16 @@ public class Demo {
         shoppingCart.addProduct(gloves);
 
         MasterCard card = new MasterCard("Andres", 12345678, 123, 30_000);
-        if (shoppingCart.pay(card)){
+        PaymentMethod masterCardPayment = new PaymentByMasterCard(card);
+        if (shoppingCart.pay(masterCardPayment)){
+            System.out.println("Successful Payment");
+        }else{
+            System.out.println("Wrong Payment");
+        }
+
+        PayPal payPalAccount = new PayPal("user@email.com", 15_000);
+        PaymentMethod paypalPayment = new PaymentByPaypal(payPalAccount);
+        if (shoppingCart.pay(paypalPayment)){
             System.out.println("Successful Payment");
         }else{
             System.out.println("Wrong Payment");

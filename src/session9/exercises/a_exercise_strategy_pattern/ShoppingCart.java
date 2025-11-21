@@ -1,8 +1,5 @@
 package session9.exercises.a_exercise_strategy_pattern;
 
-import session9.exercises.a_exercise_strategy_pattern.payments_apis.MasterCard;
-import session9.exercises.a_exercise_strategy_pattern.payments_apis.PayPal;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +23,8 @@ public class ShoppingCart{
         return totalPrice;
     }
 
-    public boolean pay(MasterCard card){
-         return card.chargeToTheCreditCard(this.getTotalPrice());
-    }
-
-    public boolean pay(PayPal payPal){
-        return payPal.processPayment(this.getTotalPrice());
+    public boolean pay(PaymentMethod paymentMethod){
+        return paymentMethod.pay(this.getTotalPrice());
     }
 
 }
