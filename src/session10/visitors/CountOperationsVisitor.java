@@ -1,6 +1,8 @@
 package session10.visitors;
 
-import session10.mathexpression.OperationNode;
+import session10.mathexpression.IntegerNode;
+import session10.mathexpression.SubtractionNode;
+import session10.mathexpression.SumNode;
 
 public class CountOperationsVisitor implements Visitor{
 
@@ -8,7 +10,7 @@ public class CountOperationsVisitor implements Visitor{
 
     @Override
     public void visit(Element node) {
-        if (node instanceof OperationNode){
+        if (node instanceof SumNode || node instanceof SubtractionNode){
             numberOfOperations++;
         }
     }

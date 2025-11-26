@@ -1,14 +1,9 @@
 package session10.mathexpression;
 
-public class SubtractionNode extends OperationNode {
+public class SubtractionNode extends Node {
 
     public SubtractionNode(String string) {
         super(string);
-    }
-
-    @Override
-    public int apply(int result, int currentInteger) {
-        return result - currentInteger;
     }
 
     public static boolean detectNode(String string){

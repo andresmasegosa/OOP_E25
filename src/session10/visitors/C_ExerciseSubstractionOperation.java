@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class C_ExerciseSubstractionOperation {
 
     public static void main(String[] args) {
-        System.out.println("Enter the math expression (e.g., 3 + 2 - 1 + 5= )");
+        System.out.println("Enter the math expression (e.g., 3 + 2 - 1 + 5 = )");
         Scanner in = new Scanner(System.in);
         String line = in.nextLine();
         System.out.println();
